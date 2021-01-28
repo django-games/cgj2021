@@ -306,6 +306,6 @@ shape = SubResource( 51 )
 current = true
 
 [node name="DashTimer" type="Timer" parent="."]
-wait_time = 0.125
+wait_time = 0.25
 one_shot = true
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]

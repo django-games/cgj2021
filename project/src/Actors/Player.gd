@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
-export (int) var speed = 250
+export (int) var DEFAULT_SPEED = 250
+export (int) var DASH_SPEED = 1000
+var speed: int = DEFAULT_SPEED
 var velocity = Vector2()
 
 func get_input():
@@ -42,11 +44,16 @@ func animate():
 		
 	var move = 'move' + x_move + y_move
 	$AnimatedSprite.play(move)
+	
+	if speed > DEFAULT_SPEED:
+		$AnimatedSprite.set_speed_scale(4.0)
+	else:
+		$AnimatedSprite.set_speed_scale(1.0)
 
 # Dash movement
 func dash():
-	speed *= 5.0
+	speed = DASH_SPEED
 	$DashTimer.start()
 
 func _on_DashTimer_timeout():
-	speed /= 5.0
+	speed = DEFAULT_SPEED
