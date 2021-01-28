@@ -13,8 +13,15 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
+	if Input.is_action_just_pressed('ui_dash'):
+		speed *= 5.0
+		$DashTimer.start()
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+
+
+func _on_DashTimer_timeout():
+	speed /= 5.0

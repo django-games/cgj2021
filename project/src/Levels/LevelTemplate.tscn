@@ -7,22 +7,22 @@
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_319_0000-14.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_359_0000-27.png" type="Texture" id=6]
 
-[sub_resource type="ConvexPolygonShape2D" id=4]
+[sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 10.6986, 19.7687, 29.5366, 10.6986, 36.5136, 12.7917, 44.1883, 16.2802, 49.5374, 28.1412, 47.6769, 45.5837, 33.9553, 55.8167, 9.30314, 45.1186, 7.90774, 22.7921 )
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 4.18665, 46.2814, 31.3971, 32.7925, 61.3984, 46.7466, 33.7228, 63.0264 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 31.8622, 34.1879, 53.9562, 46.7466, 31.8622, 57.2121, 10.2334, 46.0489 )
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 5.81463, 45.8163, 30.932, 33.9554, 58.6076, 46.2814, 33.2576, 62.0961 )
 
-[sub_resource type="ConvexPolygonShape2D" id=7]
+[sub_resource type="ConvexPolygonShape2D" id=5]
 points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32.3274, 59.5378 )
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=6]
 3/name = "train_1379_0000-47.png 3"
 3/texture = ExtResource( 3 )
 3/tex_offset = Vector2( 0, 0 )
@@ -47,14 +47,14 @@ points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32
 5/navigation_offset = Vector2( 0, 0 )
 5/shape_offset = Vector2( 0, 0 )
 5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-5/shape = SubResource( 4 )
+5/shape = SubResource( 1 )
 5/shape_one_way = false
 5/shape_one_way_margin = 1.0
 5/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 4 ),
+"shape": SubResource( 1 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 5/z_index = 0
@@ -65,7 +65,7 @@ points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32
 6/region = Rect2( 0, 0, 64, 64 )
 6/tile_mode = 0
 6/occluder_offset = Vector2( 0, 0 )
-6/occluder = SubResource( 5 )
+6/occluder = SubResource( 2 )
 6/navigation_offset = Vector2( 0, 0 )
 6/shape_offset = Vector2( 0, 0 )
 6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -90,14 +90,14 @@ points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32
 7/navigation_offset = Vector2( 0, 0 )
 7/shape_offset = Vector2( 0, 0 )
 7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-7/shape = SubResource( 6 )
+7/shape = SubResource( 4 )
 7/shape_one_way = false
 7/shape_one_way_margin = 1.0
 7/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 7/z_index = 0
@@ -111,14 +111,14 @@ points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32
 8/navigation_offset = Vector2( 0, 0 )
 8/shape_offset = Vector2( 0, 0 )
 8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-8/shape = SubResource( 7 )
+8/shape = SubResource( 5 )
 8/shape_one_way = false
 8/shape_one_way_margin = 1.0
 8/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 7 ),
+"shape": SubResource( 5 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 8/z_index = 0
@@ -128,7 +128,7 @@ points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32
 [node name="Water" type="TileMap" parent="."]
 position = Vector2( 125.635, 5.4507 )
 mode = 1
-tile_set = SubResource( 1 )
+tile_set = SubResource( 6 )
 cell_size = Vector2( 64, 32 )
 centered_textures = true
 collision_layer = 2
@@ -139,7 +139,7 @@ tile_data = PoolIntArray( -1310719, 7, 0, -1310718, 7, 0, -1310717, 7, 0, -13107
 [node name="Walls" type="TileMap" parent="."]
 position = Vector2( 125.635, 5.4507 )
 mode = 1
-tile_set = SubResource( 1 )
+tile_set = SubResource( 6 )
 cell_size = Vector2( 64, 32 )
 collision_layer = 4
 collision_mask = 0
