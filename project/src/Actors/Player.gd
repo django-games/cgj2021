@@ -3,7 +3,7 @@ extends KinematicBody2D
 const LAND_TILE = 3
 
 export (int) var DEFAULT_SPEED = 250
-export (int) var DASH_SPEED = 1000
+export (int) var DASH_SPEED = 800
 var speed: int = DEFAULT_SPEED
 var velocity = Vector2()
 var block_dash = false
@@ -23,11 +23,19 @@ func get_input():
 		dash()
 	animate()
 	velocity = velocity.normalized() * speed
+	velocity = cartesian_to_isometric(velocity)
 
 func _physics_process(delta):
-	get_input()
-	velocity = move_and_slide(velocity)
+	if not check_void():
+		get_input()
+		velocity = move_and_slide(velocity)
 
+func check_void():
+	var tile_pos = tilemap_floor.world_to_map(position)
+	if not block_dash and tilemap_floor.get_cellv(tile_pos) == -1:
+		print('perdiste')
+		return true
+	return false
 
 func animate():
 	if velocity.x == 0 and velocity.y == 0:
@@ -57,12 +65,14 @@ func animate():
 
 # Dash movement
 func dash():
+	# COMENTADO PARA INTENTAR HACERLO LUEGO
 	# Verificar que puede llegar al otro lado
-	var position_in_front = position + velocity.normalized() * 200
-	var a = tilemap_floor.world_to_map(tilemap_floor.global_transform.xform_inv(position_in_front))
-	if tilemap_floor.get_cellv(a) == LAND_TILE:
+	#var position_in_front = position + velocity.normalized() * DASH_SPEED
+	#var a = tilemap_floor.world_to_map(tilemap_floor.global_transform.xform_inv(position_in_front))
+	#if tilemap_floor.get_cellv(a) == LAND_TILE:
 		# Si es tierra, se quita la collision mask 2 que es la de piso
-		set_collision_mask_bit(1,false)
+		
+	set_collision_mask_bit(1, false)	
 	block_dash = true
 	speed = DASH_SPEED
 	$DashTimer.start()
@@ -71,6 +81,12 @@ func dash():
 func _on_DashTimer_timeout():
 	# Restauramos las configuraciones
 	speed = DEFAULT_SPEED
-	set_collision_mask_bit(1,true)
+	set_collision_mask_bit(1, true)
 	block_dash = false
 	
+
+func cartesian_to_isometric(cartesian):
+	var screen_pos = Vector2()
+	screen_pos.x = cartesian.x - cartesian.y
+	screen_pos.y = (cartesian.x + cartesian.y) / 2.0
+	return screen_pos

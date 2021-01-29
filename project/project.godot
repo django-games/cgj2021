@@ -8,15 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Walker",
+"language": "GDScript",
+"path": "res://Walker.gd"
+} ]
 _global_script_class_icons={
-
+"Walker": ""
 }
 
 [application]
 
 config/name="CGJ2021"
-run/main_scene="res://src/Levels/LevelTemplate.tscn"
+run/main_scene="res://src/Levels/GeneratedLevel.tscn"
 config/icon="res://icon.png"
 
 [display]
