@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_319_0000-29.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_319_0000-14.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_359_0000-27.png" type="Texture" id=6]
 [ext_resource path="res://src/Misc/Blur.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Levels/LevelTemplate.gd" type="Script" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 10.6986, 19.7687, 29.5366, 10.6986, 36.5136, 12.7917, 44.1883, 16.2802, 49.5374, 28.1412, 47.6769, 45.5837, 33.9553, 55.8167, 9.30314, 45.1186, 7.90774, 22.7921 )
@@ -125,6 +126,7 @@ points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32
 8/z_index = 0
 
 [node name="LevelTemplate" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="Water" type="TileMap" parent="."]
 position = Vector2( 125.635, 5.4507 )
