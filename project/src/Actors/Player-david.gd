@@ -6,6 +6,7 @@ export (int) var DEFAULT_SPEED = 250
 export (int) var DASH_SPEED = 1000
 var speed: int = DEFAULT_SPEED
 var velocity = Vector2()
+onready var ray = $RayCast2D
 
 onready var tilemap_floor = get_parent().get_tilemap_floor()
 
