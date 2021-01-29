@@ -6,7 +6,7 @@ export (int) var DEFAULT_SPEED = 250
 export (int) var DASH_SPEED = 1000
 var speed: int = DEFAULT_SPEED
 var velocity = Vector2()
-
+var block_dash = false
 onready var tilemap_floor = get_parent().get_tilemap_floor()
 
 func get_input():
@@ -19,7 +19,7 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed('ui_up'):
 		velocity.y -= 1
-	if Input.is_action_just_pressed('ui_dash'):
+	if Input.is_action_just_pressed('ui_dash') and not block_dash:
 		dash()
 	animate()
 	velocity = velocity.normalized() * speed
@@ -63,6 +63,7 @@ func dash():
 	if tilemap_floor.get_cellv(a) == LAND_TILE:
 		# Si es tierra, se quita la collision mask 2 que es la de piso
 		set_collision_mask_bit(1,false)
+	block_dash = true
 	speed = DASH_SPEED
 	$DashTimer.start()
 		
@@ -71,4 +72,5 @@ func _on_DashTimer_timeout():
 	# Restauramos las configuraciones
 	speed = DEFAULT_SPEED
 	set_collision_mask_bit(1,true)
+	block_dash = false
 	
