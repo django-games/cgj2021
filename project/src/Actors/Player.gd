@@ -19,6 +19,7 @@ func get_input():
 		dash()
 	animate()
 	velocity = velocity.normalized() * speed
+	#velocity = cartesian_to_isometric(velocity)
 
 func _physics_process(delta):
 	get_input()
@@ -57,3 +58,9 @@ func dash():
 
 func _on_DashTimer_timeout():
 	speed = DEFAULT_SPEED
+
+func cartesian_to_isometric(cartesian):
+	var screen_pos = Vector2()
+	screen_pos.x = cartesian.x - cartesian.y
+	screen_pos.y = (cartesian.x + cartesian.y) / 2.0
+	return screen_pos
