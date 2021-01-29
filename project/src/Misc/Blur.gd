@@ -2,6 +2,7 @@ extends TextureRect
 
 export var decreaseOpacityWithTime: bool = false
 export var opacityIncreaseAmount: float = 10.0 / 100.0
+export var opacityUpperBound: float = 0.85
 onready var rbt: Timer =  $ReduceBlurTimer
 
 func _ready():
@@ -10,5 +11,6 @@ func _ready():
 	self.increaseOpacity()
 
 func increaseOpacity():
-	self.modulate.a += opacityIncreaseAmount
-	print(self.modulate.a)
+	if self.modulate.a < opacityUpperBound:
+		self.modulate.a += opacityIncreaseAmount
+		print(self.modulate.a)
