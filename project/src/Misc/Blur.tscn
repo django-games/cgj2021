@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Misc/vignette.png" type="Texture" id=1]
+[ext_resource path="res://src/Misc/ReduceBlurTimer.gd" type="Script" id=2]
+[ext_resource path="res://src/Misc/Blur.gd" type="Script" id=3]
+
+[node name="Blur" type="TextureRect"]
+modulate = Color( 0.427451, 0.396078, 0.647059, 0.588235 )
+margin_left = -334.0
+margin_top = -192.0
+margin_right = 1670.0
+margin_bottom = 960.0
+texture = ExtResource( 1 )
+stretch_mode = 1
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReduceBlurTimer" type="Timer" parent="."]
+autostart = true
+script = ExtResource( 2 )
+[connection signal="timeout" from="ReduceBlurTimer" to="ReduceBlurTimer" method="_on_ReduceBlurTimer_timeout"]
