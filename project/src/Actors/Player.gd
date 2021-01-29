@@ -19,7 +19,7 @@ func get_input():
 		dash()
 	animate()
 	velocity = velocity.normalized() * speed
-	#velocity = cartesian_to_isometric(velocity)
+	velocity = cartesian_to_isometric(velocity)
 
 func _physics_process(delta):
 	get_input()
