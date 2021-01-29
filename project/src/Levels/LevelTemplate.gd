@@ -9,7 +9,7 @@ var borders = Rect2()
 
 func _ready():
 	randomize()
-	borders = Rect2(Vector2(-6400, -4128), Vector2(14832, 6820))
+	borders = Rect2(Vector2(-6100, -3828), Vector2(14532, 6520))
 	generate_level()
 	
 func generate_level():
