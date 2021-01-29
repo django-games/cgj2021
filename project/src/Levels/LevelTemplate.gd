@@ -5,6 +5,7 @@ const DIRECTIONS = [Vector2.ZERO,Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector
 export var steps: = 100000
 onready var tileMap = $Water
 onready var player = $Player
+onready var bg = $ParallaxBackground
 var borders = Rect2()
 
 func _ready():
