@@ -321,7 +321,7 @@ centered = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
 light_mask = -2147483646
-color = Color( 0.368627, 0.368627, 0.368627, 1 )
+color = Color( 0.286275, 0.286275, 0.286275, 1 )
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.25
