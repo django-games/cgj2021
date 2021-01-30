@@ -1,6 +1,6 @@
 [gd_scene load_steps=55 format=2]
 
-[ext_resource path="res://Assets/Background/andy-holmes-rCbdp8VCYhQ-unsplash.jpg" type="Texture" id=1]
+[ext_resource path="res://Assets/Background/Space_Stars1.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/spaghetti_atlas.png" type="Texture" id=3]
 [ext_resource path="res://Assets/LightSprite.png" type="Texture" id=4]
@@ -312,16 +312,18 @@ limit_smoothed = true
 scroll_base_scale = Vector2( 10, 10 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
-motion_mirroring = Vector2( 23195, 15465 )
+motion_scale = Vector2( 0.062, 0.031 )
+motion_mirroring = Vector2( 2560, 1536 )
 
-[node name="Sprite" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
-scale = Vector2( 5, 5 )
+[node name="Space_Stars1" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2( -666, -400 )
+scale = Vector2( 40, 24 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
 light_mask = -2147483646
-color = Color( 0.286275, 0.286275, 0.286275, 1 )
+color = Color( 0.329412, 0.329412, 0.329412, 1 )
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.25

@@ -25,7 +25,7 @@ points = PoolVector2Array( 5.81463, 45.8163, 30.932, 33.9554, 58.6076, 46.2814, 
 points = PoolVector2Array( 7.4426, 45.8163, 30.932, 35.1182, 56.2819, 46.514, 32.3274, 59.5378 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
-points = PoolVector2Array( 32.8669, 32.1971, 56.9796, 45.9279, 31.8622, 61.3333, 7.0798, 45.9279 )
+points = PoolVector2Array( 33.8003, 22.7533, 64.4218, 41.165, 30.5056, 63.6465, 0.465561, 43.4906 )
 
 [sub_resource type="TileSet" id=7]
 3/name = "train_1379_0000-47.png 3"
