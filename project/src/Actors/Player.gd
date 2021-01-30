@@ -7,6 +7,7 @@ export (int) var DASH_SPEED = 800
 var speed: int = DEFAULT_SPEED
 var velocity = Vector2()
 var block_dash = false
+var dead: = false
 onready var tilemap_floor = get_parent().get_tilemap_floor()
 
 func get_input():
@@ -26,7 +27,7 @@ func get_input():
 	velocity = cartesian_to_isometric(velocity)
 
 func _physics_process(delta):
-	if not check_void():
+	if not check_void() and not is_dead():
 		get_input()
 		velocity = move_and_slide(velocity)
 
@@ -89,3 +90,9 @@ func cartesian_to_isometric(cartesian):
 	screen_pos.x = cartesian.x - cartesian.y
 	screen_pos.y = (cartesian.x + cartesian.y) / 2.0
 	return screen_pos
+
+func die():
+	dead = true
+	
+func is_dead():
+	return dead

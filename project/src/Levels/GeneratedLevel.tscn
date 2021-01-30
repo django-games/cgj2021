@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/Levels/GeneratedLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_319_0000-29.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/blocks/train_1299_0001-26.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_359_0000-27.png" type="Texture" id=7]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 10.6986, 19.7687, 29.5366, 10.6986, 36.5136, 12.7917, 44.1883, 16.2802, 49.5374, 28.1412, 47.6769, 45.5837, 33.9553, 55.8167, 9.30314, 45.1186, 7.90774, 22.7921 )
@@ -149,21 +150,21 @@ points = PoolVector2Array( 33.8003, 22.7533, 64.4218, 41.165, 30.5056, 63.6465, 
 } ]
 9/z_index = 0
 
-[node name="LevelTemplate" type="Node2D"]
+[node name="GeneratedLevel" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ -4127.93, 6819.44 ],
-"_edit_vertical_guides_": [ -6378.66, 14831.9 ]
+"_edit_horizontal_guides_": [ -4127.93, 6819.44, -36.6792, 9.34169 ],
+"_edit_vertical_guides_": [ -6378.66, 14831.9, -6.11215, -8.35708 ]
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 modulate = Color( 0.984314, 0.972549, 0.972549, 1 )
 self_modulate = Color( 0.984314, 0.972549, 0.972549, 1 )
 light_mask = 2
-color = Color( 0.27451, 0.27451, 0.27451, 1 )
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 
 [node name="Water" type="TileMap" parent="."]
-light_mask = 2
+light_mask = 6
 mode = 1
 tile_set = SubResource( 7 )
 cell_size = Vector2( 64, 32 )
@@ -171,6 +172,10 @@ centered_textures = true
 collision_layer = 2
 collision_mask = 0
 format = 1
+
+[node name="Enemy" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1312.67, 682.131 )
+scale = Vector2( 0.5, 0.5 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 light_mask = 2

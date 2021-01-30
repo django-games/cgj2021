@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Characters/spaghetti_atlas.png" type="Texture" id=3]
 [ext_resource path="res://Assets/LightSprite.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=44]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 510, 170, 85, 170 )
@@ -220,7 +220,7 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1020, 170, 85, 170 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=51]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1105, 170, 85, 170 )
@@ -247,7 +247,7 @@ region = Rect2( 1445, 170, 85, 170 )
 
 [sub_resource type="SpriteFrames" id=49]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 44 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "move_back",
 "speed": 5.0
@@ -282,7 +282,7 @@ animations = [ {
 "name": "move_left",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
+"frames": [ SubResource( 43 ), SubResource( 51 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ) ],
 "loop": true,
 "name": "move_right",
 "speed": 5.0
@@ -334,12 +334,12 @@ texture = ExtResource( 4 )
 texture_scale = 3.0
 mode = 3
 range_item_cull_mask = 2
-shadow_color = Color( 0.0507812, 0.0491943, 0.0491943, 1 )
+shadow_item_cull_mask = 2
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 4 )
 energy = 0.5
-range_item_cull_mask = -2147483646
+range_item_cull_mask = -2147483644
 shadow_enabled = true
-shadow_item_cull_mask = -2147483648
+shadow_item_cull_mask = -2147483644
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
