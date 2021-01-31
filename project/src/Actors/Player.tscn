@@ -1,11 +1,14 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=61 format=2]
 
-[ext_resource path="res://Assets/Background/Space_Stars1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enjl-Starry Space Background/background_4.png" type="Texture" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/spaghetti_atlas.png" type="Texture" id=3]
 [ext_resource path="res://Assets/LightSprite.png" type="Texture" id=4]
 [ext_resource path="res://src/Misc/Blur.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/SUBWT___.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Assets/Enjl-Starry Space Background/background_1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Enjl-Starry Space Background/background_2.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Enjl-Starry Space Background/background_3.png" type="Texture" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -339,18 +342,47 @@ limit_smoothed = true
 scroll_base_scale = Vector2( 10, 10 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
-motion_scale = Vector2( 0.062, 0.031 )
-motion_mirroring = Vector2( 2560, 1536 )
+motion_scale = Vector2( 0.015, 0.007 )
+motion_mirroring = Vector2( 1536, 1344 )
 
 [node name="Space_Stars1" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
 position = Vector2( -666, -400 )
-scale = Vector2( 40, 24 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2( 0.031, 0.015 )
+motion_mirroring = Vector2( 1536, 1344 )
+
+[node name="Space_Stars1" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer2"]
+position = Vector2( -666, -400 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2( 0.042, 0.011 )
+motion_mirroring = Vector2( 1536, 1344 )
+
+[node name="Space_Stars1" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer3"]
+position = Vector2( -666, -400 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="Camera2D/ParallaxBackground"]
+motion_scale = Vector2( 0.062, 0.031 )
+motion_mirroring = Vector2( 1536, 1344 )
+
+[node name="Space_Stars1" type="Sprite" parent="Camera2D/ParallaxBackground/ParallaxLayer4"]
+position = Vector2( -666, -400 )
+scale = Vector2( 6, 6 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="CanvasModulate" type="CanvasModulate" parent="Camera2D/ParallaxBackground/ParallaxLayer"]
-light_mask = -2147483646
-color = Color( 0.329412, 0.329412, 0.329412, 1 )
+[node name="CanvasModulate" type="CanvasModulate" parent="Camera2D/ParallaxBackground"]
+color = Color( 0.207843, 0.0784314, 0.278431, 1 )
 
 [node name="Blur" parent="Camera2D" instance=ExtResource( 5 )]
 modulate = Color( 0.839216, 0.282353, 0.282353, 0.466667 )

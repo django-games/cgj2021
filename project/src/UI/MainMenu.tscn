@@ -14,17 +14,17 @@
 [ext_resource path="res://Assets/BackgroundSet/M1010.png" type="Texture" id=12]
 [ext_resource path="res://src/UI/Moon.gd" type="Script" id=13]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 54
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 96
 extra_spacing_char = 5
 extra_spacing_space = 5
 font_data = ExtResource( 10 )
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 1 ) ],
 "loop": true,
@@ -115,7 +115,7 @@ margin_top = 648.0
 margin_right = 1211.0
 margin_bottom = 704.0
 rect_pivot_offset = Vector2( 600, 28 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "by django games"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -127,7 +127,7 @@ margin_top = 584.0
 margin_right = 1212.0
 margin_bottom = 640.0
 rect_pivot_offset = Vector2( 600, 28 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "2021"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -140,7 +140,7 @@ margin_left = -558.0
 margin_top = 48.0
 margin_right = 558.0
 margin_bottom = 318.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.105882, 0.235294, 0.470588, 1 )
 custom_colors/font_color_shadow = Color( 0.956863, 0, 0.890196, 1 )
 text = "UNTITLED GAME"
@@ -152,8 +152,7 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0.113725 )
 position = Vector2( 668.334, 385.303 )
 scale = Vector2( 5.18081, 3.37841 )
-frames = SubResource( 1 )
-frame = 2
+frames = SubResource( 3 )
 playing = true
 __meta__ = {
 "_edit_group_": true,
