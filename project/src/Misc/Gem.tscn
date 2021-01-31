@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/Misc/Gem.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Misc/yellow_gem.png" type="Texture" id=2]
+[ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 25.9237
+height = 12.4686
+
+[node name="Gem" type="Area2D"]
+light_mask = -2147483646
+script = ExtResource( 1 )
+Player = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+shape = SubResource( 1 )
+
+[node name="MainSprite" type="Sprite" parent="."]
+light_mask = 2
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Item_body_entered"]

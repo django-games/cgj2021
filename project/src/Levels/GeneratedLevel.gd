@@ -1,5 +1,8 @@
 extends Node2D
 
+
+export (PackedScene) var Gem
+
 const DIRECTIONS = [
 	Vector2.ZERO,
 	Vector2.RIGHT,
@@ -10,6 +13,14 @@ const DIRECTIONS = [
 	Vector2.LEFT + Vector2.DOWN,
 	Vector2.DOWN,
 	Vector2.RIGHT + Vector2.DOWN
+]
+
+const GEMS = [
+	"dark_gem",
+	"magenta_gem",
+	"purple_gem",
+	"silver_gem",
+	"yellow_gem"
 ]
 
 export var steps: = 100000
@@ -30,7 +41,7 @@ func generate_level():
 	walker.queue_free()
 	
 	# Set player to first position in generated map
-	player.set_position(map[0])
+	player.position = map[0]
 	
 	# Generate tiles
 	for location in map:
@@ -44,8 +55,30 @@ func generate_level():
 				var tile: int = tileMap.get_cellv(collision_position)
 				
 				if tile == -1: # if it is not floor
-					tileMap.set_cellv(collision_position, 7)
-					
+					tileMap.set_cellv(collision_position, 9)
+	add_gems(map)
+
+
+func add_gems(map):
+	
+	var incr = 3
+	var i = incr
+	for gem in GEMS:
+		# Add objects randomly in the map
+		var gem_instance = Gem.instance()
+		gem_instance.gem_name = gem
+
+		gem_instance.position = tileMap.map_to_world(map[i])
+		
+		# Cambiar linea de arriba por lo siguiente cuando querramos randomizar
+		# gem_instance.position = tileMap.map_to_world(map[randi() % map.size()])
+		add_child(gem_instance)
+
+		i += incr
+		
+
+		
+
 func get_tilemap_floor():
 	return $Water
 

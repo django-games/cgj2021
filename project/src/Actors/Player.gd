@@ -11,6 +11,9 @@ var dead: = false
 onready var tilemap_floor = get_parent().get_tilemap_floor()
 onready var death_message = $DeathMessage
 
+var collected_gems = []
+const GEMS_TO_WIN = 5
+
 func get_input():
 	velocity = Vector2()
 	if Input.is_action_pressed('ui_right'):
@@ -102,3 +105,13 @@ func die():
 	
 func is_dead():
 	return dead
+
+
+func pick_gem(gem_name):
+	collected_gems.append(gem_name)
+	check_win()
+
+func check_win():
+	if collected_gems.size() == GEMS_TO_WIN:
+		print('tu tu tu')
+		pass # colocar dialogo de ganador
