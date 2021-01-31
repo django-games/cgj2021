@@ -16,6 +16,7 @@ export var steps: = 100000
 onready var tileMap = $Water
 onready var player = $Player
 onready var bg = $ParallaxBackground
+
 var borders = Rect2()
 
 func _ready():

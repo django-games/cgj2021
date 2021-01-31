@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/tema-principal-cgj2021.wav-cebe9426abffced2d0bd49d76214ef9b.sample"
+
+[deps]
+
+source_file="res://Music/tema-principal-cgj2021.wav"
+dest_files=[ "res://.import/tema-principal-cgj2021.wav-cebe9426abffced2d0bd49d76214ef9b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

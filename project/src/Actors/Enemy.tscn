@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://Music/tema-principal-cgj2021.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/spaghetti_atlas.png" type="Texture" id=3]
 
@@ -113,4 +114,11 @@ animation = "move_right_front"
 light_mask = 2
 position = Vector2( 2.81851, 15.685 )
 shape = SubResource( 10 )
+
+[node name="EnemyMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+pitch_scale = 0.48
+autoplay = true
+max_distance = 1000.0
+attenuation = 4.28709
 [connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]
