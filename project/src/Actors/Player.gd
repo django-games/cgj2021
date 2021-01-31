@@ -121,4 +121,7 @@ func check_win():
 	return collected_gems.size() == GEMS_TO_WIN
 
 func _on_MainMenuTimer_timeout():
-	get_tree().change_scene("res://src/UI/MainMenu.tscn")
+	if check_win():
+		get_tree().change_scene("res://src/UI/Outro.tscn")
+	else:
+		get_tree().change_scene("res://src/UI/MainMenu.tscn")
