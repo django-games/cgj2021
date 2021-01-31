@@ -2,10 +2,14 @@ extends Node2D
 
 const DIRECTIONS = [
 	Vector2.ZERO,
-	Vector2.RIGHT, 
+	Vector2.RIGHT,
+	Vector2.RIGHT + Vector2.UP,
 	Vector2.UP, 
+	Vector2.LEFT + Vector2.UP,
 	Vector2.LEFT, 
-	Vector2.DOWN
+	Vector2.LEFT + Vector2.DOWN,
+	Vector2.DOWN,
+	Vector2.RIGHT + Vector2.DOWN
 ]
 
 export var steps: = 100000
@@ -39,7 +43,7 @@ func generate_level():
 				var tile: int = tileMap.get_cellv(collision_position)
 				
 				if tile == -1: # if it is not floor
-					tileMap.set_cellv(collision_position, 9)
+					tileMap.set_cellv(collision_position, 7)
 					
 func get_tilemap_floor():
 	return $Water
