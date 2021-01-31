@@ -147,9 +147,9 @@ __meta__ = {
 
 [node name="Credits" type="Label" parent="."]
 margin_left = 128.0
-margin_top = 72.0
+margin_top = 56.0
 margin_right = 1208.0
-margin_bottom = 712.0
+margin_bottom = 739.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.988235, 0.968627, 0.968627, 1 )
 custom_colors/font_outline_modulate = Color( 0.184314, 0, 0.407843, 1 )
@@ -162,14 +162,13 @@ Andres Ignacio Torres
 David Rodriguez
 German Robayo
 
-intro adapted from the lyrics of
-\"@is it cold in the water@ by sophie
+intro and narration adapted from the lyrics of
+\"@is it cold in the water@ and @it's ok to cry@ by sophie
 
 outro adapted from a poem by e.e.cummings
 
 IN MEMORIAM @ SOPHIE 1986 @ 2021"
 align = 1
-percent_visible = 0.0
 __meta__ = {
 "_edit_use_anchors_": false
 }

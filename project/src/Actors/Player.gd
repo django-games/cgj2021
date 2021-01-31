@@ -11,6 +11,7 @@ var dead: = false
 onready var tilemap_floor = get_parent().get_tilemap_floor()
 onready var death_message = $DeathMessage
 onready var win_message = $WinMessage
+onready var gem_sounds = $GemSounds
 
 var collected_gems = []
 const GEMS_TO_WIN = 5
@@ -114,8 +115,22 @@ func is_dead():
 
 func pick_gem(gem_name):
 	collected_gems.append(gem_name)
+	self.play_sound(gem_name)
 	if check_win():
 		$MainMenuTimer.start()
+
+func play_sound(gem_name):
+	if gem_name == "dark_gem":
+		gem_sounds.get_node("Gem1").play()
+	elif gem_name == "silver_gem":
+		gem_sounds.get_node("Gem2").play()
+	elif gem_name == "yellow_gem":
+		gem_sounds.get_node("Gem3").play()
+	elif gem_name == "magenta_gem":
+		gem_sounds.get_node("Gem4").play()
+	elif gem_name == "purple_gem":
+		gem_sounds.get_node("Gem5").play()
+	return
 
 func check_win():
 	return collected_gems.size() == GEMS_TO_WIN

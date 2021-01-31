@@ -155,7 +155,7 @@ modulate = Color( 1, 1, 1, 0.113725 )
 position = Vector2( 668.334, 385.303 )
 scale = Vector2( 5.18081, 3.37841 )
 frames = SubResource( 3 )
-frame = 1
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true,
