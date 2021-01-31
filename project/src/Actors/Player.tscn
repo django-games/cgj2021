@@ -314,27 +314,6 @@ animation = "move_front"
 position = Vector2( 0, 50 )
 shape = SubResource( 50 )
 
-[node name="DeathMessage" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -387.5
-margin_top = -73.5
-margin_right = 387.5
-margin_bottom = 73.5
-custom_fonts/font = SubResource( 51 )
-custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
-custom_colors/font_outline_modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
-custom_colors/font_color_shadow = Color( 0.423529, 0.113725, 0.113725, 1 )
-text = "YOU DIED"
-align = 1
-uppercase = true
-percent_visible = 0.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 limit_smoothed = true
@@ -400,6 +379,10 @@ margin_bottom = 1055.62
 wait_time = 0.25
 one_shot = true
 
+[node name="MainMenuTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [node name="Shadow" type="Light2D" parent="."]
 texture = ExtResource( 4 )
 texture_scale = 3.0
@@ -413,4 +396,49 @@ energy = 0.5
 range_item_cull_mask = -2147483644
 shadow_enabled = true
 shadow_item_cull_mask = -2147483644
+
+[node name="DeathMessage" type="Label" parent="."]
+light_mask = 6
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -387.5
+margin_top = -73.5
+margin_right = 387.5
+margin_bottom = 73.5
+custom_fonts/font = SubResource( 51 )
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_colors/font_outline_modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
+custom_colors/font_color_shadow = Color( 0.423529, 0.113725, 0.113725, 1 )
+text = "YOU LOST"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WinMessage" type="Label" parent="."]
+light_mask = -2147483642
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -666.0
+margin_top = -85.0
+margin_right = 676.0
+margin_bottom = 62.0
+custom_fonts/font = SubResource( 51 )
+custom_colors/font_color = Color( 0.921569, 0.921569, 0.921569, 1 )
+custom_colors/font_outline_modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
+custom_colors/font_color_shadow = Color( 0.423529, 0.113725, 0.113725, 1 )
+text = "YOU FOUND THEM"
+align = 1
+uppercase = true
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="DashTimer" to="." method="_on_DashTimer_timeout"]
+[connection signal="timeout" from="MainMenuTimer" to="." method="_on_MainMenuTimer_timeout"]

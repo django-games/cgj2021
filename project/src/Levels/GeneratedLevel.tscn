@@ -159,12 +159,6 @@ __meta__ = {
 }
 Gem = ExtResource( 10 )
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-modulate = Color( 0.984314, 0.972549, 0.972549, 1 )
-self_modulate = Color( 0.984314, 0.972549, 0.972549, 1 )
-light_mask = 2
-color = Color( 0.12549, 0.12549, 0.12549, 1 )
-
 [node name="Water" type="TileMap" parent="."]
 light_mask = 6
 mode = 1
@@ -174,6 +168,12 @@ centered_textures = true
 collision_layer = 2
 collision_mask = 0
 format = 1
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+modulate = Color( 0.984314, 0.972549, 0.972549, 1 )
+self_modulate = Color( 0.984314, 0.972549, 0.972549, 1 )
+light_mask = 2
+color = Color( 0.12549, 0.12549, 0.12549, 1 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 light_mask = 2

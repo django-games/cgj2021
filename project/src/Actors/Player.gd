@@ -10,6 +10,7 @@ var block_dash = false
 var dead: = false
 onready var tilemap_floor = get_parent().get_tilemap_floor()
 onready var death_message = $DeathMessage
+onready var win_message = $WinMessage
 
 var collected_gems = []
 const GEMS_TO_WIN = 5
@@ -37,7 +38,9 @@ func _physics_process(delta):
 	
 	if self.dead:
 		self.death_message.percent_visible += 0.01
-
+	elif check_win():
+		self.win_message.percent_visible += 0.01
+		
 func check_void():
 	var tile_pos = tilemap_floor.world_to_map(position)
 	if not block_dash and tilemap_floor.get_cellv(tile_pos) == -1:
@@ -100,17 +103,21 @@ func cartesian_to_isometric(cartesian):
 	return screen_pos
 
 func die():
-	dead = true
-	$Camera2D/Blur.maxOpacity()
+	if not is_dead() and not check_win():
+		$MainMenuTimer.start()
+		dead = true
+		$Camera2D/Blur.maxOpacity()
 	
 func is_dead():
 	return dead
 
 func pick_gem(gem_name):
 	collected_gems.append(gem_name)
-	check_win()
+	if check_win():
+		$MainMenuTimer.start()
 
 func check_win():
-	if collected_gems.size() == GEMS_TO_WIN:
-		print('tu tu tu')
-		pass # colocar dialogo de ganador
+	return collected_gems.size() == GEMS_TO_WIN
+
+func _on_MainMenuTimer_timeout():
+	get_tree().change_scene("res://src/UI/MainMenu.tscn")

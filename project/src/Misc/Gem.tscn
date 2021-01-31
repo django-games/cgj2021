@@ -10,7 +10,7 @@ radius = 25.9237
 height = 12.4686
 
 [node name="Gem" type="Area2D"]
-light_mask = -2147483646
+light_mask = -2147483642
 script = ExtResource( 1 )
 Player = ExtResource( 3 )
 

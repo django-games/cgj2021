@@ -71,8 +71,8 @@ func add_gems(map):
 
 		#gem_instance.position = tileMap.map_to_world(map[i])
 		
-		# Cambiar linea de arriba por lo siguiente cuando querramos randomizar
-		var index:int = max(randi() % map.size(), 550)
+		# Cambiar linea de arriba por las siguientes cuando querramos randomizar
+		var index:int = max(randi() % map.size(), 1000)
 		gem_instance.position = tileMap.map_to_world(map[index])
 		add_child(gem_instance)
 
