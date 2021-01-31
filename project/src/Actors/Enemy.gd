@@ -4,6 +4,8 @@ onready var player = get_parent().get_player()
 var speed := 190
 var velocity := Vector2()
 
+var particles_threshold_speed = 1
+
 func _physics_process(delta):
 	
 	var player_position: Vector2 = player.position
@@ -16,7 +18,11 @@ func _physics_process(delta):
 	velocity = position.direction_to(player_position) * speed
 	animate()
 	position += velocity * delta
-
+	
+	
+	$Particles2D.gravity.x = - velocity.x
+	$Particles2D.gravity.y = - velocity.y
+	
 func touch_player():
 	# Se puede emitir una señal para que se baje la vida del player (?)
 	player.die()
