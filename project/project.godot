@@ -20,9 +20,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="CGJ2021"
+config/name="reverie"
+config/description="A game by Django Games for 2021's edition of the Caracas Game Jam (official site for the Global Game Jam). "
 run/main_scene="res://src/UI/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/Misc/purple_gem.png"
 
 [display]
 

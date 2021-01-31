@@ -137,14 +137,15 @@ __meta__ = {
 [node name="Title" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -558.0
-margin_top = 48.0
-margin_right = 558.0
-margin_bottom = 318.0
+margin_left = -668.0
+margin_top = 32.0
+margin_right = 676.0
+margin_bottom = 302.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0.105882, 0.235294, 0.470588, 1 )
+custom_colors/font_color = Color( 0.705882, 0.768627, 0.87451, 1 )
 custom_colors/font_color_shadow = Color( 0.956863, 0, 0.890196, 1 )
-text = "UNTITLED GAME"
+text = "Reverie"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -154,7 +155,7 @@ modulate = Color( 1, 1, 1, 0.113725 )
 position = Vector2( 668.334, 385.303 )
 scale = Vector2( 5.18081, 3.37841 )
 frames = SubResource( 3 )
-frame = 2
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true,
@@ -169,9 +170,19 @@ frames = SubResource( 4 )
 playing = true
 script = ExtResource( 13 )
 
+[node name="TextureButton" type="TextureButton" parent="Moon"]
+margin_left = -277.0
+margin_top = -235.0
+margin_right = 277.0
+margin_bottom = 235.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
 pitch_scale = 0.5
 autoplay = true
 [connection signal="pressed" from="Buttons/Play" to="Buttons" method="play"]
 [connection signal="pressed" from="Buttons/Quit" to="Buttons" method="quit"]
+[connection signal="pressed" from="Moon/TextureButton" to="Buttons" method="_on_TextureButton_pressed"]
