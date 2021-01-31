@@ -38,6 +38,7 @@ func _physics_process(delta):
 func check_void():
 	var tile_pos = tilemap_floor.world_to_map(position)
 	if not block_dash and tilemap_floor.get_cellv(tile_pos) == -1:
+		self.die()
 		return true # you die
 	return false
 
