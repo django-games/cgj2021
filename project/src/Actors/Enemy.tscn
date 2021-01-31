@@ -3,6 +3,11 @@
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/spaghetti_atlas.png" type="Texture" id=3]
 
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 170, 85, 170 )
+
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
@@ -38,13 +43,13 @@ flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 1020, 170, 85, 170 )
 
-[sub_resource type="AtlasTexture" id=9]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 170, 85, 170 )
-
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "move_left_back",
+"speed": 5.0
+}, {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "move_left_front",
@@ -79,14 +84,9 @@ animations = [ {
 "loop": true,
 "name": "move_right",
 "speed": 5.0
-}, {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
-"name": "move_left_back",
-"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=11]
+[sub_resource type="CapsuleShape2D" id=10]
 radius = 17.759
 height = 44.9778
 
@@ -106,11 +106,11 @@ color = Color( 0.141176, 0.109804, 0.109804, 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 0.141176, 0.109804, 0.109804, 1 )
 light_mask = 2
-frames = SubResource( 10 )
+frames = SubResource( 9 )
 animation = "move_right_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 position = Vector2( 2.81851, 15.685 )
-shape = SubResource( 11 )
+shape = SubResource( 10 )
 [connection signal="body_entered" from="." to="." method="_on_Enemy_body_entered"]

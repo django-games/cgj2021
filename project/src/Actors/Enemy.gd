@@ -1,7 +1,7 @@
 extends Area2D
 
 onready var player = get_parent().get_player()
-var speed := 190
+var speed := 100
 var velocity := Vector2()
 
 var particles_threshold_speed = 1
@@ -11,9 +11,9 @@ func _physics_process(delta):
 	var player_position: Vector2 = player.position
 	
 	if position.distance_to(player_position) <= 200:
-		speed = 210
+		speed = 120
 	else:
-		speed = 190
+		speed = 100
 		
 	velocity = position.direction_to(player_position) * speed
 	animate()
