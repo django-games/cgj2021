@@ -1,0 +1,180 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Assets/Dawn/2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Dawn/6.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Dawn/3.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Dawn/5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Dawn/4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Dawn/8.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Dawn/1.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Dawn/7.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Parallax/far.png" type="Texture" id=9]
+[ext_resource path="res://Music/tema-principal-cgj2021.wav" type="AudioStream" id=10]
+[ext_resource path="res://Assets/The Midnight (Slant) DEMO.otf" type="DynamicFontData" id=11]
+[ext_resource path="res://src/Levels/Dawn.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 11 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.027451, 0, 0.027451, 0.47451 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -668.0
+margin_top = -392.0
+margin_right = 684.0
+margin_bottom = 392.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+pitch_scale = 0.5
+autoplay = true
+
+[node name="BG" type="Control" parent="."]
+margin_left = -8.0
+margin_top = 16.0
+margin_right = 32.0
+margin_bottom = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BG"]
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer8"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer2"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer3"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer4"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer5"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer6"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="BG/ParallaxBackground"]
+
+[node name="TextureRect" type="TextureRect" parent="BG/ParallaxBackground/ParallaxLayer7"]
+margin_right = 1344.0
+margin_bottom = 768.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 72.0
+margin_right = 1208.0
+margin_bottom = 712.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.988235, 0.968627, 0.968627, 1 )
+custom_colors/font_outline_modulate = Color( 0.184314, 0, 0.407843, 1 )
+custom_colors/font_color_shadow = Color( 0.768627, 0.0823529, 0.631373, 1 )
+text = "Thanks for playing!
+
+@ DJANGO GAMES 2021 @
+Gustavo Castellanos
+Andres Ignacio Torres
+David Rodriguez
+German Robayo
+
+intro adapted from the lyrics of
+\"@is it cold in the water@ by sophie
+
+outro adapted from a poem by e.e.cummings
+
+IN MEMORIAM @ SOPHIE 1986 @ 2021"
+align = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+[connection signal="timeout" from="CreditsTimer" to="." method="_on_CreditsTimer_timeout"]
