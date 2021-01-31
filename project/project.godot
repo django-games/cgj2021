@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="CGJ2021"
-run/main_scene="res://src/Levels/GeneratedLevel.tscn"
+run/main_scene="res://src/UI/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
