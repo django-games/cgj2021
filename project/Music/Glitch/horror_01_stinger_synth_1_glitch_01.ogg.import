@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/horror_01_stinger_synth_1_glitch_01.ogg-f7407b05731a63a50744652267d4bf6b.oggstr"
+
+[deps]
+
+source_file="res://Music/Glitch/horror_01_stinger_synth_1_glitch_01.ogg"
+dest_files=[ "res://.import/horror_01_stinger_synth_1_glitch_01.ogg-f7407b05731a63a50744652267d4bf6b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
