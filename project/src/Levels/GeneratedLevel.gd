@@ -23,7 +23,7 @@ const GEMS = [
 	"yellow_gem"
 ]
 
-export var steps: = 10000
+export var steps: = 3500
 onready var tileMap = $Water
 onready var player = $Player
 onready var bg = $ParallaxBackground
@@ -47,7 +47,8 @@ func generate_level():
 	for location in map:
 		for direction in DIRECTIONS:
 			# Set tile as floor
-			tileMap.set_cellv(location+direction, 3)
+			if direction == Vector2.ZERO or randf() <= 0.75:
+				tileMap.set_cellv(location+direction, 3)
 			
 			# Generate invisible collision tiles
 			for collision_direction in DIRECTIONS:
@@ -68,15 +69,14 @@ func add_gems(map):
 		var gem_instance = Gem.instance()
 		gem_instance.gem_name = gem
 
-		gem_instance.position = tileMap.map_to_world(map[i])
+		# gem_instance.position = tileMap.map_to_world(map[i])
 		
 		# Cambiar linea de arriba por lo siguiente cuando querramos randomizar
-		# gem_instance.position = tileMap.map_to_world(map[randi() % map.size()])
+		var index:int = max(randi() % map.size(), 550)
+		gem_instance.position = tileMap.map_to_world(map[index])
 		add_child(gem_instance)
 
 		i += incr
-		
-
 		
 
 func get_tilemap_floor():
