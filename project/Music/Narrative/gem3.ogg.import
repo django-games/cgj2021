@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/gem3.ogg-e8ad01279cd4f041f978c3eb338fa96c.oggstr"
+
+[deps]
+
+source_file="res://Music/Narrative/gem3.ogg"
+dest_files=[ "res://.import/gem3.ogg-e8ad01279cd4f041f978c3eb338fa96c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
