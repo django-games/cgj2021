@@ -3,7 +3,7 @@ extends Control
 
 func play():
 	print("Pressed play")
-	get_tree().change_scene("res://src/Levels/GeneratedLevel.tscn")
+	get_tree().change_scene("res://src/UI/Intro.tscn")
 
 
 func quit():
