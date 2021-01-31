@@ -9,6 +9,7 @@ var velocity = Vector2()
 var block_dash = false
 var dead: = false
 onready var tilemap_floor = get_parent().get_tilemap_floor()
+onready var death_message = $DeathMessage
 
 func get_input():
 	velocity = Vector2()
@@ -30,6 +31,9 @@ func _physics_process(delta):
 	if not check_void() and not is_dead():
 		get_input()
 		velocity = move_and_slide(velocity)
+	
+	if self.dead:
+		self.death_message.percent_visible += 0.01
 
 func check_void():
 	var tile_pos = tilemap_floor.world_to_map(position)
@@ -93,6 +97,7 @@ func cartesian_to_isometric(cartesian):
 
 func die():
 	dead = true
+	$Camera2D/Blur.maxOpacity()
 	
 func is_dead():
 	return dead
