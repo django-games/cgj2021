@@ -2,7 +2,7 @@ extends Node
 class_name Walker
 
 const DIRECTIONS = [Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN]
-const MAX_STEPS: = 25
+const MAX_STEPS: = 15
 const CHANCE_TURN: = 0.128
 
 var position: = Vector2.ZERO

@@ -93,6 +93,7 @@ height = 44.9778
 
 [node name="Enemy" type="Area2D"]
 light_mask = -2147483646
+z_index = 1
 script = ExtResource( 2 )
 
 [node name="Particles2D" type="CPUParticles2D" parent="."]

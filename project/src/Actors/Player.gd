@@ -106,7 +106,6 @@ func die():
 func is_dead():
 	return dead
 
-
 func pick_gem(gem_name):
 	collected_gems.append(gem_name)
 	check_win()

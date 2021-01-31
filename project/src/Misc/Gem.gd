@@ -33,8 +33,6 @@ func _ready():
 
 
 func _on_Item_body_entered(body):
-	if body.name != 'Player':
-		return
-
-	queue_free()
-	body.pick_gem(gem_name)
+	if body.name == 'Player':
+		queue_free()
+		body.pick_gem(gem_name)

@@ -47,7 +47,7 @@ func generate_level():
 	for location in map:
 		for direction in DIRECTIONS:
 			# Set tile as floor
-			if direction == Vector2.ZERO or randf() <= 0.75:
+			if direction == Vector2.ZERO or randf() <= 0.60:
 				tileMap.set_cellv(location+direction, 3)
 			
 			# Generate invisible collision tiles
@@ -69,7 +69,7 @@ func add_gems(map):
 		var gem_instance = Gem.instance()
 		gem_instance.gem_name = gem
 
-		# gem_instance.position = tileMap.map_to_world(map[i])
+		#gem_instance.position = tileMap.map_to_world(map[i])
 		
 		# Cambiar linea de arriba por lo siguiente cuando querramos randomizar
 		var index:int = max(randi() % map.size(), 550)
