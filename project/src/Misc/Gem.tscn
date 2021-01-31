@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Misc/Gem.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Misc/yellow_gem.png" type="Texture" id=2]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Music/459838__eschwabe3__ship-radar.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 25.9237
@@ -21,4 +22,11 @@ shape = SubResource( 1 )
 light_mask = 2
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -17.333
+pitch_scale = 0.78
+autoplay = true
+attenuation = 2.82843
 [connection signal="body_entered" from="." to="." method="_on_Item_body_entered"]

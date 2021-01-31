@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/Levels/GeneratedLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_319_0000-29.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Misc/Gem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Music/tema-principal-cgj2021.wav" type="AudioStream" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 10.6986, 19.7687, 29.5366, 10.6986, 36.5136, 12.7917, 44.1883, 16.2802, 49.5374, 28.1412, 47.6769, 45.5837, 33.9553, 55.8167, 9.30314, 45.1186, 7.90774, 22.7921 )
@@ -182,3 +183,9 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Player" parent="." instance=ExtResource( 8 )]
 light_mask = 2
 scale = Vector2( 0.5, 0.5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -40.156
+pitch_scale = 0.5
+autoplay = true

@@ -1,89 +1,89 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Music/tema-principal-cgj2021.wav" type="AudioStream" id=1]
+[ext_resource path="res://Music/243568__vumseplutten1709__galacticmessage1.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/Actors/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Characters/spaghetti_atlas.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 170, 85, 170 )
+region = Rect2( 510, 170, 85, 170 )
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1020, 0, 85, 170 )
+region = Rect2( 1530, 170, 85, 170 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 85, 170 )
+region = Rect2( 510, 0, 85, 170 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1530, 0, 85, 170 )
+region = Rect2( 1020, 170, 85, 170 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 510, 170, 85, 170 )
+region = Rect2( 1020, 0, 85, 170 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1530, 170, 85, 170 )
+region = Rect2( 0, 0, 85, 170 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 510, 0, 85, 170 )
+region = Rect2( 1530, 0, 85, 170 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 1020, 170, 85, 170 )
+region = Rect2( 0, 170, 85, 170 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": true,
-"name": "move_left_back",
+"name": "move_back",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
-"name": "move_left_front",
+"name": "move_right_back",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "move_right_front",
+"name": "move_front",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "move_left",
+"name": "move_right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "move_back",
+"name": "move_left_front",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "move_right_back",
+"name": "move_right_front",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
-"name": "move_front",
+"name": "move_left",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ) ],
 "loop": true,
-"name": "move_right",
+"name": "move_left_back",
 "speed": 5.0
 } ]
 

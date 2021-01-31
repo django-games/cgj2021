@@ -23,7 +23,7 @@ const GEMS = [
 	"yellow_gem"
 ]
 
-export var steps: = 100000
+export var steps: = 10000
 onready var tileMap = $Water
 onready var player = $Player
 onready var bg = $ParallaxBackground
