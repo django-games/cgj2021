@@ -104,6 +104,7 @@ func cartesian_to_isometric(cartesian):
 
 func die():
 	if not is_dead() and not check_win():
+		get_parent().get_node("SFX/LOST").play()
 		$MainMenuTimer.start()
 		dead = true
 		$Camera2D/Blur.maxOpacity()

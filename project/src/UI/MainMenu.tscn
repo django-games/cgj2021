@@ -154,7 +154,7 @@ modulate = Color( 1, 1, 1, 0.113725 )
 position = Vector2( 668.334, 385.303 )
 scale = Vector2( 5.18081, 3.37841 )
 frames = SubResource( 3 )
-frame = 1
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true,
@@ -166,6 +166,7 @@ modulate = Color( 0.647059, 0.560784, 0.890196, 0.207843 )
 position = Vector2( 864, 456 )
 scale = Vector2( 0.578125, 0.578125 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 script = ExtResource( 13 )
 

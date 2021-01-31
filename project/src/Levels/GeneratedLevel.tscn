@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/Levels/GeneratedLevel.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Mushy_Individual_Tiles/water/train_319_0000-29.png" type="Texture" id=2]
@@ -10,6 +10,13 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Misc/Gem.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/Misc/SFX.gd" type="Script" id=11]
+[ext_resource path="res://Music/UI/UI_button19.wav" type="AudioStream" id=12]
+[ext_resource path="res://Music/UI/UI_button15.wav" type="AudioStream" id=13]
+[ext_resource path="res://Music/UI/UI_button06.wav" type="AudioStream" id=14]
+[ext_resource path="res://Music/UI/UI_button07.wav" type="AudioStream" id=15]
+[ext_resource path="res://Music/Glitch/horror_01_drone_glitch_01.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Music/Glitch/horror_01_stinger_violin_glitch_04.ogg" type="AudioStream" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 10.6986, 19.7687, 29.5366, 10.6986, 36.5136, 12.7917, 44.1883, 16.2802, 49.5374, 28.1412, 47.6769, 45.5837, 33.9553, 55.8167, 9.30314, 45.1186, 7.90774, 22.7921 )
@@ -182,3 +189,80 @@ scale = Vector2( 0.5, 0.5 )
 [node name="Enemy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 2214.31, 688.481 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="SFX" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX1" type="Control" parent="SFX"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="SFX/SFX1"]
+wait_time = 5.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFX/SFX1"]
+stream = ExtResource( 12 )
+
+[node name="SFX2" type="Control" parent="SFX"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="SFX/SFX2"]
+wait_time = 11.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFX/SFX2"]
+stream = ExtResource( 13 )
+
+[node name="SFX3" type="Control" parent="SFX"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="SFX/SFX3"]
+wait_time = 7.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFX/SFX3"]
+stream = ExtResource( 14 )
+
+[node name="SFX4" type="Control" parent="SFX"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="SFX/SFX4"]
+wait_time = 15.0
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SFX/SFX4"]
+stream = ExtResource( 15 )
+
+[node name="BG" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource( 16 )
+volume_db = -10.0
+autoplay = true
+
+[node name="LOST" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource( 17 )
+volume_db = 10.0
+[connection signal="timeout" from="SFX/SFX1/Timer" to="SFX" method="SFX1_timeout"]
+[connection signal="timeout" from="SFX/SFX2/Timer" to="SFX" method="SFX2_timeout"]
+[connection signal="timeout" from="SFX/SFX3/Timer" to="SFX" method="SFX3_timeout"]
+[connection signal="timeout" from="SFX/SFX4/Timer" to="SFX" method="SFX4_timeout"]
